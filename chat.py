@@ -13,7 +13,7 @@ app = Flask(__name__)
 def Keyboard():
     dataSend = {
         "type" : "buttons",
-        "buttons" : ["팡팡이와 대화하기!", "도움말"]
+        "buttons" : ["꼬리봇과 대화하기!"]
     }
     return jsonify(dataSend)
 
@@ -21,10 +21,10 @@ def Keyboard():
 def Message():
     dataReceive = request.get_json()
     content = dataReceive['content']
-    if content == u"팡팡이와 대화하기!":
+    if content == u"꼬리봇과 대화하기!":
         dataSend = {
             "message": {
-                "text": "팡팡이 명령어 목록!\n1. 도움말\n2. 안녕!\n3. 저기요~"
+                "text": "꼬리봇 명령어 목록!\n1. 도움말\n2. 안녕!\n3. 저기요~"
             }
         }
     elif content == u"도움말":
